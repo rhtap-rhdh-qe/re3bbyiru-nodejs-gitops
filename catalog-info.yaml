@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: re3bbyiru-nodejs-gitops
+  description: This is GitOps manifest for re3bbyiru-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=re3bbyiru-nodejs
+    backstage.io/kubernetes-id: re3bbyiru-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: re3bbyiru-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:re3bbyiru-nodejs
